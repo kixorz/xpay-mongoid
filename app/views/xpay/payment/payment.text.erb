@@ -1,0 +1,7 @@
+<% if !@error.nil? %>
+ERROR <%= @error %>
+<% elsif !@answer.nil? %>
+XPAY_ANSWER <%= @answer %>
+<% else %>
+XPAY_OK
+<% end %>
