@@ -7,8 +7,8 @@ require "xpay/version"
 Gem::Specification.new do |s|
   s.name        = "xpay"
   s.version     = Xpay::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
+  s.authors     = ["Adam Konrad"]
+  s.email       = [""]
   s.homepage    = "TODO"
   s.summary     = "TODO: Summary of Xpay."
   s.description = "TODO: Description of Xpay."
