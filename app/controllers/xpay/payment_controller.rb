@@ -11,7 +11,7 @@ class Xpay::PaymentController < ApplicationController
 			:project_id					=> params[:projectID],
 			:method_id					=> params[:paymentMethod],
 			:amount							=> params[:amount],
-			:amount_total				=> params[:amount_total],
+			:amount_total				=> params[:totalAmount],
 			:currency						=> params[:currency],
 
 			:service_number			=> params[:serviceNumber],
