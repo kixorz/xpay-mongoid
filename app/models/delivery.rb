@@ -14,7 +14,7 @@ class Delivery
 
 	def self.is_confirmed(payment)
 		self.where(
-			:session_id => payment[:session_id],
+			:delivery_id => payment[:payment_id],
 			:delivery_status => 'fully-delivered'
 		).exists?
 	end
