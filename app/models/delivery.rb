@@ -11,4 +11,11 @@ class Delivery
 	index({ delivery_id: 1 }, { unique: true })
 	index({ session_id: 1 }, { background: true })
 	index({ delivery_status: 1 }, { background: true })
+
+	def self.is_confirmed(payment)
+		self.where(
+			:session_id => payment[:session_id],
+			:delivery_status => 'fully-delivered'
+		).exists?
+	end
 end

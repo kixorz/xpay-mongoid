@@ -4,7 +4,7 @@ class Xpay::PaymentController < ApplicationController
 		#http://www.xpay.cz/download/Xpay_tech_transaction.cz.pdf
 
 		input = {
-			:payment_id					=> params[:ID],
+			:payment_id					=> params[:ID], #using this to pair payment and delivery
 			:session_id					=> params[:sessionID],
 			:transaction_id			=> params[:transactionID],
 			#:transaction_type		=> params[:action], #cannot be used due to rails reserved params
