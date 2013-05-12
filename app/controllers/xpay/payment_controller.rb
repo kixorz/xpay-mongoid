@@ -36,7 +36,7 @@ class Xpay::PaymentController < ApplicationController
 		#rescue
 		#	@error = 'Payment failure'
 		#end
-		@error = 'ERROR TEST'
+		#@error = 'ERROR TEST'
 		@answer = 'ANSWER TEST'
 
 		respond_to do |format|
