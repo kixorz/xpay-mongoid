@@ -12,9 +12,7 @@ class Xpay::DeliveryController < ApplicationController
 		delivery = Delivery.new input
 		delivery.save!
 
-		if respond_to?(:xpay_delivery)
-			@error = xpay_delivery delivery
-		end
+		@error = xpay_delivery delivery rescue 'Delivery failure'
 
 		respond_to do |format|
 			format.text

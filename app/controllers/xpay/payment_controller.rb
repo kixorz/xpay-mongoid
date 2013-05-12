@@ -29,13 +29,12 @@ class Xpay::PaymentController < ApplicationController
 		payment = Payment.new input
 		payment.save!
 
-		puts 'xpay payment...controller response check'
-		if ApplicationController.respond_to?(:xpay_payment)
-			puts 'controller response call'
+		begin
 			response = xpay_payment payment
-			@error = response[:error]
-			@answer = response[:answer]
-			puts 'controller response finished'
+			@error = response[:error] rescue nil
+			@answer = response[:answer] rescue nil
+		rescue
+			@error = 'Payment failure'
 		end
 
 		respond_to do |format|
