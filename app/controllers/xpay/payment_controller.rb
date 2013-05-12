@@ -30,7 +30,9 @@ class Xpay::PaymentController < ApplicationController
 		payment.save!
 
 		if respond_to?(:xpay_payment)
-			@answer = xpay_payment payment
+			response = xpay_payment payment
+			@error = response[:error]
+			@answer = response[:answer]
 		end
 
 		respond_to do |format|
