@@ -15,7 +15,7 @@ class Delivery
 	def self.is_confirmed(payment)
 		self.where(
 			:delivery_id => payment[:payment_id],
-			:delivery_status => 'fully-delivered'
+			:delivery_status => 'fully-delivered'	#this doesn't work with undelivered SMS
 		).exists?
 	end
 end
